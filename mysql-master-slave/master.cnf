@@ -1,0 +1,4 @@
+[mysqld]
+log-bin       = master-bin
+log-bin-index = master-bin.index
+server-id     = 1

@@ -1,0 +1,4 @@
+[mysqld]
+relay-log       = slave-relay-bin
+relay-log-index = slave-relay-bin.index
+server-id       = 2
