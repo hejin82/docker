@@ -22,7 +22,7 @@ pos=`mysql -u root -h mysql-master -e "SHOW MASTER STATUS\G" | grep Position: | 
 
 # slaveの開始
 mysql -u root -e "RESET SLAVE";
-mysql -u root -e "CHANGE MASTER TO MASTER_HOST='mysql-master', MASTER_USER='root', MASTER_PASSWORD='', MASTER_LOG_FILE='${log_file}', MASTER_LOG_POS=${pos};"
+mysql -u root -e "CHANGE MASTER TO MASTER_HOST='mysql-master', MASTER_USER='repl_user', MASTER_PASSWORD='repl_user_pass', MASTER_LOG_FILE='${log_file}', MASTER_LOG_POS=${pos};"
 mysql -u root -e "START SLAVE"
 
 # masterをunlockする
